@@ -4,7 +4,9 @@
   "description": "Embeddable eCommerce built on top of Clayful APIs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "nvm use 10",
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "keywords": [
     "eCommerce",
@@ -26,6 +28,7 @@
     "gulp-append-prepend": "^1.0.4",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
     "gulp-dotify": "^0.1.2",
