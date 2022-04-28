@@ -337,6 +337,7 @@
 		},
 		'product-detail': {
 			quantity:                          '수량',
+			request:                           '요청사항',
 			selectOption:                      '%{option} 선택',
 			selectVariant:                     '세부 옵션 선택',
 			selectedVariant:                   '선택된 세부 옵션',

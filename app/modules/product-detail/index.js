@@ -12,6 +12,8 @@ module.exports = Thunder => {
 		productActions:   Thunder.options.productActions,        // ['add-to-cart', 'buy-now'],
 		optionSelector:   Thunder.options.productOptionSelector, // 'combined' || 'separated'
 		descriptionStyle: 'detailed',                            // 'simple' || 'detailed'
+		requestType:      'text',                                // input type
+		useRequest:       false,                                 // input type
 		useFollowingNav:  true,                                  // Use following navigation?
 		useReviews:       Thunder.options.productReview,         // Use reviews?
 		useRating:        (                                      // Use review rating?
@@ -205,6 +207,7 @@ module.exports = Thunder => {
 		const $addToCart = $(this).find('.thunder--add-to-cart');
 		const $buyNow = $(this).find('.thunder--buy-now');
 		const $goToCart = $(this).find('.thunder--go-to-cart');
+    const $productItemRequest = $(this).find('.thunder--request-input-product-item input')
 
 		const variationToVariants = context.product.variants.reduce((o, v) => {
 
@@ -324,14 +327,15 @@ module.exports = Thunder => {
 		function addToCart(success) {
 			const item = buildItemData();
 
-			success = success || (() => {
+			success = success || ((item) => {
 
 				$goToCart.show();
 
 				Thunder.execute(
 					context.options.onItemAdd,
 					$container,
-					context
+					context,
+          item
 				);
 
 			});
@@ -445,6 +449,7 @@ module.exports = Thunder => {
 		function buildItemData() {
 
 			const shippingMethod = $shippingMethodSelector.val();
+      const productItemRequest = $productItemRequest.val();
 			const bundleItems = [];
 
 			$bundleItems.each(function() {
@@ -477,6 +482,7 @@ module.exports = Thunder => {
 				variant:        variant,
 				shippingMethod: shippingMethod,
 				quantity:       itemQuantity ? parseInt(itemQuantity) : null,
+        request:        productItemRequest,
 				bundleItems:    bundleItems
 			};
 

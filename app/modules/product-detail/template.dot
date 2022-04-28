@@ -98,6 +98,20 @@
 					</div>
 
 				</div>
+
+				{{? it.options.useRequest }}
+				<div class="thunder--request-input-product-item">
+
+					<label class="thunder--label">{{= it.m('request') }}</label>
+
+					<div>
+						<input type="{{= it.options.requestType }}" name="request" value="" class="thunder--request" />
+					</div>
+
+				</div>
+				{{? }}
+
+				
 			</div>
 
 			{{? it.product.bundles.length > 0 }}
