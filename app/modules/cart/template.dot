@@ -49,7 +49,14 @@
 									{{= item.shippingMethod.name }}
 								</li>
 								{{? }}
+								{{? item.request }}
+								<li class="thunder--cart-item-shipping-method">
+									<span class="thunder--cart-entity-label">{{= it.m('request') }}</span>
+									{{= item.request }}
+								</li>
+								{{? }}
 							</ul>
+							
 
 							{{? item.status !== 'ok' }}
 							<div class="thunder--item-error">

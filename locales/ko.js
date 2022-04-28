@@ -461,6 +461,7 @@
 			hasNoItems:                        '카트에 상품이 하나도 없습니다.',
 			itemOption:                        '상품 옵션',
 			shippingMethod:                    '배송 방식',
+			request:                           '요청사항',
 			noProduct:                         '삭제된 상품',
 			noVariant:                         '삭제된 상품 옵션',
 			notAvailableProduct:               '구매 불가능한 상품',

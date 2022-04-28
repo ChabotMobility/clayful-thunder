@@ -13,6 +13,8 @@ module.exports = Thunder => {
 		optionSelector:   Thunder.options.productOptionSelector, // 'combined' || 'separated'
 		descriptionStyle: 'detailed',                            // 'simple' || 'detailed'
 		requestType:      'text',                                // input type
+		requestDateMin:   Thunder.options.requestDateMin,        // input date min 1
+		requestDateMax:   Thunder.options.requestDateMax,        // input date max 2
 		useRequest:       false,                                 // input type
 		useFollowingNav:  true,                                  // Use following navigation?
 		useReviews:       Thunder.options.productReview,         // Use reviews?

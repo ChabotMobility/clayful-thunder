@@ -105,7 +105,7 @@
 					<label class="thunder--label">{{= it.m('request') }}</label>
 
 					<div>
-						<input type="{{= it.options.requestType }}" name="request" value="" class="thunder--request" />
+						<input type="{{= it.options.requestType }}" name="request" value="" min="{{= it.options.requestDateMin }}" max="{{= it.options.requestDateMax }}" class="thunder--request" />
 					</div>
 
 				</div>
